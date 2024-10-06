@@ -2,19 +2,16 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useMediaQuery } from 'react-responsive'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Minus, Plus, Tag, ChevronDown, Home, Calendar, Gift, Calculator, ShoppingCart } from 'lucide-react'
+import { Minus, Plus, Tag, ChevronDown } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ThemeToggle } from '@/components/ThemeToggle'
-import BottomNavbar from '@/components/BottomNavbar';
+import BottomNavbar from '@/components/BottomNavbar'
 
 export default function CartPage() {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1024px)' })
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
@@ -59,27 +56,29 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <header className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center space-x-4">
-          <h1 className="text-2xl font-bold">Your Cart</h1>
-        </div>
-        <div className="flex items-center space-x-4">
-          <ThemeToggle />
-          <Avatar>
-            <AvatarImage src="/placeholder.svg?height=40&width=40" alt="Profile" />
-            <AvatarFallback>JD</AvatarFallback>
-          </Avatar>
-        </div>
-      </header>
+    <div className="bg-white min-h-screen p-6 pb-24">
+      <Card className="mb-6">
+        <CardContent className="p-6 pt-8">
+          <div className="flex items-center justify-between mb-4">
+            <h1 className="text-2xl font-semibold">Your Cart</h1>
+            <div className="flex items-center space-x-4">
+              <ThemeToggle />
+              <Avatar>
+                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="Profile" />
+                <AvatarFallback>JD</AvatarFallback>
+              </Avatar>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex-grow container mx-auto px-4 py-8 max-w-md"
+        className="space-y-6"
       >
-        <Card className="mb-6">
+        <Card>
           <CardHeader>
             <CardTitle>Cart Items</CardTitle>
           </CardHeader>
@@ -88,8 +87,8 @@ export default function CartPage() {
               <div key={item.id} className="flex items-center justify-between p-2 border-b last:border-b-0">
                 <div>
                   <h2 className="font-semibold">{item.name}</h2>
-                  <p className="text-sm text-muted-foreground">${item.price} | Qty: {item.quantity}</p>
-                  <p className="text-sm text-muted-foreground">Appointment: {item.appointment}</p>
+                  <p className="text-sm text-gray-600">${item.price} | Qty: {item.quantity}</p>
+                  <p className="text-sm text-gray-600">Appointment: {item.appointment}</p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Button
@@ -122,7 +121,7 @@ export default function CartPage() {
           </CardContent>
         </Card>
 
-        <Card className="mb-6">
+        <Card>
           <CardHeader>
             <CardTitle>Promo Code</CardTitle>
           </CardHeader>
@@ -135,30 +134,30 @@ export default function CartPage() {
                 onChange={(e) => setPromoCode(e.target.value)}
                 className="flex-grow"
               />
-              <Button variant="secondary" onClick={handleApplyDiscount}>
+              <Button onClick={handleApplyDiscount} className="bg-[#607AFB] text-white hover:bg-[#4c62c9]">
                 <Tag className="mr-2 h-4 w-4" /> Apply
               </Button>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="mb-6">
+        <Card>
           <CardHeader>
             <CardTitle>Order Summary</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Subtotal:</span>
+                <span className="text-gray-600">Subtotal:</span>
                 <span>${subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Tax:</span>
+                <span className="text-gray-600">Tax:</span>
                 <span>${(subtotal * 0.1).toFixed(2)}</span>
               </div>
               {discount > 0 && (
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Discount:</span>
+                  <span className="text-gray-600">Discount:</span>
                   <span>-${discount.toFixed(2)}</span>
                 </div>
               )}
@@ -177,18 +176,18 @@ export default function CartPage() {
             </Button>
             {showBreakdown && (
               <div className="mt-4 space-y-2">
-                <p className="text-sm text-muted-foreground">Detailed price breakdown:</p>
+                <p className="text-sm text-gray-600">Detailed price breakdown:</p>
                 {/* Add more detailed breakdown here */}
               </div>
             )}
           </CardContent>
         </Card>
 
-        <Button className="w-full bg-primary text-primary-foreground py-6 text-lg">
+        <Button className="w-full bg-[#607AFB] text-white hover:bg-[#4c62c9] py-6 text-lg">
           Proceed to Checkout
         </Button>
 
-        <div className="bg-destructive/10 border-l-4 border-destructive text-destructive p-4 rounded-md mt-6">
+        <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md">
           <p className="flex items-center">
             <span className="mr-2">⚠️</span>
             Final pricing is provided after consulting with the artist for accuracy.
