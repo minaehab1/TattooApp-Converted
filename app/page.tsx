@@ -1,11 +1,9 @@
-import { Metadata } from 'next'
-import HomePage from '@/components/HomePage'
+import Dashboard from '@/components/Dashboard'
 
-export const metadata: Metadata = {
-  title: 'Tattoo Studio - Home',
-  description: 'Welcome to our tattoo studio',
-}
-
-export default function Page() {
-  return <HomePage />
+export default function Home() {
+  return (
+    <main>
+      <Dashboard />
+    </main>
+  )
 }
