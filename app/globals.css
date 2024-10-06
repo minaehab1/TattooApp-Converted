@@ -82,3 +82,7 @@
 .button:hover {
   background-color: #4c62c9;
 }
+
+.super-rounded {
+  border-radius: 9999px;
+}

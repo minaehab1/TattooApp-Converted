@@ -3,13 +3,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { ChevronRight, Home, CalendarDays, Star, Calculator, ShoppingCart } from 'lucide-react';
+
+const CustomBadge = ({ children }: { children: React.ReactNode }) => (
+  <span className="text-xs bg-green-500 text-white px-2 py-1 rounded-full">
+    {children}
+  </span>
+);
 
 const Dashboard = () => {
   return (
     <div className="bg-white min-h-screen p-6 pb-24">
       <Card className="mb-6">
-        <CardContent className="p-6">
+        <CardContent className="p-6 pt-8">
           <div className="flex items-center mb-4">
             <Image
               src="/profile-image.jpg"
@@ -20,7 +27,7 @@ const Dashboard = () => {
             />
             <div>
               <h2 className="text-2xl font-semibold">Hi, Jodie</h2>
-              <p className="text-base text-[#607AFB]">You have 13,000 points</p>
+              <p className="text-base text-gray-600">You have 13,000 points</p>
             </div>
           </div>
           <div className="flex space-x-4">
@@ -43,10 +50,10 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
+      <h2 className="text-xl font-semibold mb-4 text-center">Quick Links</h2>
       <div className="space-y-4 mb-6">
         <Card>
-          <CardContent className="p-4 flex items-center justify-between">
+          <CardContent className="p-4 pt-6 flex items-center justify-between">
             <div className="flex items-center flex-1">
               <CalendarDays className="h-6 w-6 mr-3 text-[#607AFB] flex-shrink-0" />
               <div>
@@ -58,9 +65,9 @@ const Dashboard = () => {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4 flex items-center justify-between">
+          <CardContent className="p-4 pt-6 flex items-center justify-between">
             <div className="flex items-center flex-1">
-              <Image src="/gallery-icon.png" alt="Gallery" width={24} height={24} className="mr-3 flex-shrink-0" />
+              <CalendarDays className="h-6 w-6 mr-3 text-[#607AFB] flex-shrink-0" />
               <div>
                 <h3 className="text-lg font-semibold">Access gallery</h3>
                 <p className="text-sm text-gray-600">Check out our latest works and collections</p>
@@ -72,14 +79,16 @@ const Dashboard = () => {
       </div>
 
       <Card className="mb-6">
-        <CardContent className="p-4">
-          <h2 className="text-xl font-semibold mb-2">Booking Status</h2>
-          <p className="text-lg font-medium text-green-600">Open for appointments</p>
+        <CardContent className="p-4 pt-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xl font-semibold">Booking Status</h2>
+            <CustomBadge>Open for appointments</CustomBadge>
+          </div>
         </CardContent>
       </Card>
 
       <Card className="mb-6">
-        <CardContent className="p-4">
+        <CardContent className="p-4 pt-6">
           <h2 className="text-xl font-semibold mb-4">Gallery</h2>
           <div className="flex overflow-x-auto space-x-4 pb-4">
             <Image src="/gallery1.jpg" alt="Gallery 1" width={200} height={200} className="rounded-lg" />
@@ -90,14 +99,14 @@ const Dashboard = () => {
       </Card>
 
       <Card className="mb-6">
-        <CardContent className="p-4">
+        <CardContent className="p-4 pt-6">
           <h2 className="text-xl font-semibold mb-2">Promotions</h2>
           <p className="text-base text-gray-600">20% off on all tattoos above $200 this weekend</p>
         </CardContent>
       </Card>
 
       <Card className="mb-20">
-        <CardContent className="p-4">
+        <CardContent className="p-4 pt-6">
           <h2 className="text-xl font-semibold mb-2">News & Events</h2>
           <p className="text-base text-gray-600">New artist joining our team next month!</p>
         </CardContent>
