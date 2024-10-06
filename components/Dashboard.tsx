@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ChevronRight, Home, CalendarDays, Star, Calculator, ShoppingCart } from 'lucide-react';
+import BottomNavbar from '@/components/BottomNavbar';
 
 const CustomBadge = ({ children }: { children: React.ReactNode }) => (
   <span className="text-xs text-green-500 border border-green-500 px-2 py-1 rounded-full bg-transparent">
@@ -112,30 +113,7 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
-        <div className="flex justify-around items-center py-2">
-          <Link href="/" className="flex flex-col items-center text-[#607AFB]">
-            <Home className="h-6 w-6" />
-            <span className="text-xs mt-1">Home</span>
-          </Link>
-          <Link href="/booking" className="flex flex-col items-center text-gray-400">
-            <CalendarDays className="h-6 w-6" />
-            <span className="text-xs mt-1">Booking</span>
-          </Link>
-          <Link href="/rewards" className="flex flex-col items-center text-gray-400">
-            <Star className="h-6 w-6" />
-            <span className="text-xs mt-1">Rewards</span>
-          </Link>
-          <Link href="/calculator" className="flex flex-col items-center text-gray-400">
-            <Calculator className="h-6 w-6" />
-            <span className="text-xs mt-1">Price Calc</span>
-          </Link>
-          <Link href="/cart" className="flex flex-col items-center text-gray-400">
-            <ShoppingCart className="h-6 w-6" />
-            <span className="text-xs mt-1">Cart</span>
-          </Link>
-        </div>
-      </nav>
+      <BottomNavbar activePage="/" />
     </div>
   );
 };

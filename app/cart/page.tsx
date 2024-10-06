@@ -2,15 +2,16 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useMediaQuery } from 'react-responsive'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Minus, Plus, Tag, ChevronDown } from 'lucide-react'
-import { Navigation } from '@/app/components/Navigation'
+import { Minus, Plus, Tag, ChevronDown, Home, Calendar, Gift, Calculator, ShoppingCart } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ThemeToggle } from '@/components/ThemeToggle'
+import BottomNavbar from '@/components/BottomNavbar';
 
 export default function CartPage() {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1024px)' })
@@ -195,7 +196,7 @@ export default function CartPage() {
         </div>
       </motion.div>
 
-      <Navigation />
+      <BottomNavbar activePage="/cart" />
     </div>
   )
 }

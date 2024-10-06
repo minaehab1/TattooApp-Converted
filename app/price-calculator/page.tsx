@@ -232,6 +232,8 @@ const PriceCalculatorPage = () => {
         </div>
       </nav>
     </div>
-  )
-}
-export default PriceCalculatorPage
+  );
+} // Make sure there's a line break here
+
+export default PriceCalculatorPage;
+
