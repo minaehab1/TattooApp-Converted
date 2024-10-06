@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { ChevronRight, Home, CalendarDays, Star, Calculator, ShoppingCart } from 'lucide-react';
 
 const CustomBadge = ({ children }: { children: React.ReactNode }) => (
-  <span className="text-xs bg-green-500 text-white px-2 py-1 rounded-full">
+  <span className="text-xs text-green-500 border border-green-500 px-2 py-1 rounded-full bg-transparent">
     {children}
   </span>
 );
