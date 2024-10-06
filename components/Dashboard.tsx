@@ -31,7 +31,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex space-x-4">
-            <div className="flex-1 h-14 rounded-[24px] overflow-hidden">
+            <div className="flex-1 h-12 rounded-[24px] overflow-hidden">
               <Button 
                 variant="outline" 
                 className="w-full h-full !bg-gray-100 text-gray-600 hover:!bg-gray-200 !border-0 text-sm font-normal"
@@ -39,7 +39,7 @@ const Dashboard = () => {
                 Redeem
               </Button>
             </div>
-            <div className="flex-1 h-14 rounded-[24px] overflow-hidden" style={{backgroundColor: '#607AFB'}}>
+            <div className="flex-1 h-12 rounded-[24px] overflow-hidden" style={{backgroundColor: '#607AFB'}}>
               <Button 
                 className="w-full h-full !bg-transparent text-white hover:!bg-[#4c62c9] !border-0 text-sm font-normal"
               >
