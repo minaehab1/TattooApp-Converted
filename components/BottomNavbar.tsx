@@ -11,7 +11,7 @@ const navItems: NavItem[] = [
   { href: '/', icon: Home, label: 'Home' },
   { href: '/booking', icon: CalendarDays, label: 'Booking' },
   { href: '/rewards', icon: Star, label: 'Rewards' },
-  { href: '/calculator', icon: Calculator, label: 'Price Calc' },
+  { href: '/price-calculator', icon: Calculator, label: 'Price Calc' }, // Updated this line
   { href: '/cart', icon: ShoppingCart, label: 'Cart' },
 ];
 

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import BookingPage from '@/components/BookingPage'
 import { Toaster } from 'react-hot-toast'
-import { Navigation } from '@/app/components/Navigation'
+import BottomNavbar from '@/components/BottomNavbar'
 
 export const metadata: Metadata = {
   title: 'Booking | Your Tattoo App',
@@ -13,7 +13,7 @@ export default function Page() {
     <>
       <BookingPage />
       <Toaster position="bottom-center" />
-      <Navigation />
+      <BottomNavbar activePage="/booking" />
     </>
   )
 }

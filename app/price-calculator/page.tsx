@@ -15,6 +15,7 @@ import { Switch } from "@/components/ui/switch"
 import { Home, CalendarDays, Star, Calculator, ShoppingCart, ChevronDown, Tag } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ThemeToggle } from '@/components/ThemeToggle'
+import BottomNavbar from '@/components/BottomNavbar';
 
 const PriceCalculatorPage = () => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1024px)' })
@@ -207,33 +208,10 @@ const PriceCalculatorPage = () => {
         </Card>
       </motion.div>
 
-      <nav className="fixed bottom-0 left-0 right-0 bg-background border-t border-gray-200 shadow-lg z-50" aria-label="Bottom navigation">
-        <div className="flex justify-around items-center p-3 max-w-md mx-auto">
-          <Link href="/" className="flex flex-col items-center text-muted-foreground" aria-label="Home">
-            <Home className="h-6 w-6" />
-            <span className="text-xs mt-1">Home</span>
-          </Link>
-          <Link href="/booking" className="flex flex-col items-center text-muted-foreground" aria-label="Booking">
-            <CalendarDays className="h-6 w-6" />
-            <span className="text-xs mt-1">Booking</span>
-          </Link>
-          <Link href="/rewards" className="flex flex-col items-center text-muted-foreground" aria-label="Rewards">
-            <Star className="h-6 w-6" />
-            <span className="text-xs mt-1">Rewards</span>
-          </Link>
-          <Link href="/price-calculator" className="flex flex-col items-center text-primary" aria-label="Price Calculator" aria-current="page">
-            <Calculator className="h-6 w-6" />
-            <span className="text-xs mt-1">Price Calc</span>
-          </Link>
-          <Link href="/cart" className="flex flex-col items-center text-muted-foreground" aria-label="Shopping Cart">
-            <ShoppingCart className="h-6 w-6" />
-            <span className="text-xs mt-1">Cart</span>
-          </Link>
-        </div>
-      </nav>
+      <BottomNavbar activePage="/price-calculator" />
     </div>
   );
-} // Make sure there's a line break here
+}
 
 export default PriceCalculatorPage;
 

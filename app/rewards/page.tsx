@@ -8,10 +8,10 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Progress } from "@/components/ui/progress"
 import { Calendar, Gift, Copy, Share2, QrCode, Award, Smile, Star } from 'lucide-react'
-import { Navigation } from '@/app/components/Navigation'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { Input } from "@/components/ui/input"
+import BottomNavbar from '@/components/BottomNavbar';
 
 export default function RewardsPage() {
   const [activeTab, setActiveTab] = useState("myRewards")
@@ -246,7 +246,7 @@ export default function RewardsPage() {
         </Tabs>
       </motion.div>
 
-      <Navigation />
+      <BottomNavbar activePage="/rewards" />
     </div>
   )
 }
