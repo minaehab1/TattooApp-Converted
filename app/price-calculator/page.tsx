@@ -2,9 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useMediaQuery } from 'react-responsive'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,13 +10,12 @@ import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Switch } from "@/components/ui/switch"
-import { Home, CalendarDays, Star, Calculator, ShoppingCart, ChevronDown, Tag } from 'lucide-react'
+import { ChevronDown, Tag } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ThemeToggle } from '@/components/ThemeToggle'
-import BottomNavbar from '@/components/BottomNavbar';
+import BottomNavbar from '@/components/BottomNavbar'
 
 const PriceCalculatorPage = () => {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1024px)' })
   const [selectedItems, setSelectedItems] = useState(['Item 01', 'Item 02', 'Item 03'])
   const [detailLevel, setDetailLevel] = useState('Low')
   const [height, setHeight] = useState<number[]>([50])
@@ -43,27 +40,28 @@ const PriceCalculatorPage = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <header className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center space-x-4">
-          <h1 className="text-2xl font-bold">Tattoo Price Calculator</h1>
+    <div className="bg-white min-h-screen p-6 pb-24">
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h2 className="text-2xl font-semibold">Tattoo Price Calculator</h2>
+          <p className="text-base text-gray-600">Estimate the cost of your tattoo</p>
         </div>
         <div className="flex items-center space-x-4">
           <ThemeToggle />
           <Avatar>
-            <AvatarImage src="/placeholder.svg?height=40&width=40" alt="Profile" />
+            <AvatarImage src="/profile-image.jpg" alt="Profile" />
             <AvatarFallback>JD</AvatarFallback>
           </Avatar>
         </div>
-      </header>
+      </div>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex-grow p-4"
+        className="space-y-6"
       >
-        <Card className="w-full max-w-4xl mx-auto">
+        <Card>
           <CardHeader>
             <CardTitle>Calculate Your Tattoo Price</CardTitle>
           </CardHeader>
@@ -159,7 +157,7 @@ const PriceCalculatorPage = () => {
                     className="pl-10"
                   />
                 </div>
-                <Button onClick={handleApplyDiscount}>Apply Discount</Button>
+                <Button onClick={handleApplyDiscount} className="bg-[#607AFB] text-white hover:bg-[#4c62c9]">Apply Discount</Button>
               </div>
             </section>
 
@@ -198,7 +196,7 @@ const PriceCalculatorPage = () => {
               </Card>
             </section>
 
-            <div className="bg-destructive/10 border-l-4 border-destructive text-destructive p-4 rounded-md">
+            <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md">
               <p className="flex items-center">
                 <span className="mr-2">⚠️</span>
                 Final pricing is provided after consulting with me for accuracy.
@@ -214,4 +212,3 @@ const PriceCalculatorPage = () => {
 }
 
 export default PriceCalculatorPage;
-
