@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo Price Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="price-calculator.css">
+</head>
+<body>
+    <div class="container">
+        <header class="calculator-header">
+            <h1>Tattoo Price Calculator</h1>
+            <img src="profile-image.jpg" alt="Profile" class="profile-pic">
+        </header>
+
+        <section class="style-selection">
+            <h2>Style Selection</h2>
+            <div class="dropdown">
+                <div class="selected-items">
+                    <span class="item">Item 01 <button class="remove-item">×</button></span>
+                    <span class="item">Item 02 <button class="remove-item">×</button></span>
+                    <span class="item">Item 03 <button class="remove-item">×</button></span>
+                    <button class="dropdown-toggle">▼</button>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><label><input type="checkbox" checked> Item 01</label></li>
+                    <li><label><input type="checkbox" checked> Item 02</label></li>
+                    <li><label><input type="checkbox" checked> Item 03</label></li>
+                    <li><label><input type="checkbox"> Item 04</label></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="details-level">
+            <h2>Details Level</h2>
+            <div class="button-group">
+                <button class="btn btn-primary active">Low</button>
+                <button class="btn btn-secondary">Medium</button>
+                <button class="btn btn-secondary">High</button>
+            </div>
+        </section>
+
+        <section class="size-specification">
+            <h2>Size Specification</h2>
+            <div class="slider-container">
+                <label for="height">Height: <span id="height-value">50 cm</span></label>
+                <input type="range" id="height" min="0" max="100" value="50">
+            </div>
+            <div class="slider-container">
+                <label for="width">Width: <span id="width-value">50 cm</span></label>
+                <input type="range" id="width" min="0" max="100" value="50">
+            </div>
+        </section>
+
+        <section class="apply-discounts">
+            <h2>Apply Discounts</h2>
+            <div class="discount-input">
+                <input type="text" placeholder="Enter discount code">
+                <button class="btn btn-primary">Apply Discount</button>
+            </div>
+        </section>
+
+        <section class="estimate-summary">
+            <h2>Estimate Summary <span class="breakdown-toggle">Breakdown <input type="checkbox" id="breakdown-toggle"></span></h2>
+            <div class="summary-content">
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span>$200</span>
+                </div>
+                <div class="summary-item">
+                    <span>Discount:</span>
+                    <span>$20</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span>$180</span>
+                </div>
+                <div class="summary-details">
+                    <div>Total Hours: 5</div>
+                    <div>Rate per Hour: $100</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="notice">
+            <p>Final pricing is provided after consulting with me for accuracy.</p>
+        </div>
+
+        <nav class="bottom-nav">
+            <ul>
+                <li><a href="index.html"><i class="icon-home"></i>Home</a></li>
+                <li><a href="booking.html"><i class="icon-booking"></i>Booking</a></li>
+                <li><a href="rewards.html"><i class="icon-rewards"></i>Rewards</a></li>
+                <li class="active"><a href="price-calculator.html"><i class="icon-calculator"></i>Price Calc</a></li>
+                <li><a href="cart.html"><i class="icon-cart"></i>Cart</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script src="price-calculator.js"></script>
+</body>
+</html>

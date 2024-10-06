@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo Studio Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard</h1>
+            <div class="user-info">
+                <img src="profile-image.jpg" alt="Profile picture" class="profile-pic">
+                <p>Hi, Jodie</p>
+                <p>You have 13,000 points</p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-secondary">Redeem</button>
+                <button class="btn btn-primary">Invite</button>
+            </div>
+        </header>
+
+        <section class="quick-links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li>Book a tattoo<br>Or a consultation. Use your rewards to pay</li>
+                <li>Access gallery<br>Check out our latest works and collections</li>
+            </ul>
+        </section>
+
+        <section class="booking-status">
+            <h2>Booking Status</h2>
+            <div class="appointment">
+                <p>Upcoming Appointment</p>
+                <p>Date: Nov 15, 2023</p>
+                <p>Artist: Alex Carter</p>
+                <button class="btn btn-cancel">Cancel</button>
+            </div>
+            <div class="appointment">
+                <p>Upcoming Appointment</p>
+                <p>Date: Dec 10, 2023</p>
+                <p>Artist: Jamie Lee</p>
+                <button class="btn btn-cancel">Cancel</button>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-carousel">
+                <button class="carousel-button prev">&lt;</button>
+                <div class="carousel-container">
+                    <img src="tattoo1.jpg" alt="Floral tattoo">
+                    <img src="tattoo2.jpg" alt="Tattoo design">
+                    <img src="tattoo3.jpg" alt="Tattoo artwork">
+                </div>
+                <button class="carousel-button next">&gt;</button>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </section>
+
+        <section class="promotions">
+            <h2>Promotions</h2>
+            <div class="promo-grid">
+                <div class="promo-item">
+                    <img src="flash-sale.jpg" alt="Flash Sale">
+                    <p>Flash Sale: Up to 70% off</p>
+                </div>
+                <div class="promo-item">
+                    <img src="new-designs.jpg" alt="New Designs">
+                    <p>New Designs: 2023 Collection</p>
+                </div>
+                <div class="promo-item">
+                    <img src="limited-edition.jpg" alt="Limited Edition">
+                    <p>Limited Edition: Zodiac Collection</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-events">
+            <h2>News & Events</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <img src="flash-sale-event.jpg" alt="Flash Sale Event">
+                    <p>Flash Sale: Up to 70% off</p>
+                </div>
+                <div class="news-item">
+                    <img src="new-designs-event.jpg" alt="New Designs Event">
+                    <p>New Designs: 2023 Collection</p>
+                </div>
+                <div class="news-item">
+                    <img src="limited-edition-event.jpg" alt="Limited Edition Event">
+                    <p>Limited Edition: Zodiac Collection</p>
+                </div>
+            </div>
+        </section>
+
+        <nav class="bottom-nav">
+            <ul>
+                <li class="active"><i class="icon-home"></i>Home</li>
+                <li><i class="icon-booking"></i>Booking</li>
+                <li><i class="icon-rewards"></i>Rewards</li>
+                <li><i class="icon-calculator"></i>Price Calc</li>
+                <li><i class="icon-cart"></i>Cart</li>
+            </ul>
+        </nav>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
