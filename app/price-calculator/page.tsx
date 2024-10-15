@@ -14,6 +14,7 @@ import { ChevronDown, Tag, CalendarDays } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ThemeToggle } from '@/components/ThemeToggle'
 import BottomNavbar from '@/components/BottomNavbar'
+import * as SliderPrimitive from "@radix-ui/react-slider"
 
 const PriceCalculatorPage = () => {
   const [selectedItems, setSelectedItems] = useState(['Item 01', 'Item 02', 'Item 03'])
@@ -130,27 +131,37 @@ const PriceCalculatorPage = () => {
               <div className="space-y-4">
                 <div>
                   <Label htmlFor="height" className="text-gray-600">Height (cm): {height[0]} cm</Label>
-                  <Slider
+                  <SliderPrimitive.Root
                     id="height"
                     min={1}
                     max={100}
                     step={1}
                     value={height}
                     onValueChange={setHeight}
-                    className="mt-2"
-                  />
+                    className="relative flex items-center select-none touch-none w-full h-5 mt-2"
+                  >
+                    <SliderPrimitive.Track className="bg-gray-200 relative grow rounded-full h-2">
+                      <SliderPrimitive.Range className="absolute bg-[#607AFB] rounded-full h-full" />
+                    </SliderPrimitive.Track>
+                    <SliderPrimitive.Thumb className="block w-5 h-5 bg-white border-2 border-[#607AFB] rounded-full focus:outline-none focus-visible:ring focus-visible:ring-[#607AFB] focus-visible:ring-opacity-75" />
+                  </SliderPrimitive.Root>
                 </div>
                 <div>
                   <Label htmlFor="width" className="text-gray-600">Width (cm): {width[0]} cm</Label>
-                  <Slider
+                  <SliderPrimitive.Root
                     id="width"
                     min={1}
                     max={100}
                     step={1}
                     value={width}
                     onValueChange={setWidth}
-                    className="mt-2"
-                  />
+                    className="relative flex items-center select-none touch-none w-full h-5 mt-2"
+                  >
+                    <SliderPrimitive.Track className="bg-gray-200 relative grow rounded-full h-2">
+                      <SliderPrimitive.Range className="absolute bg-[#607AFB] rounded-full h-full" />
+                    </SliderPrimitive.Track>
+                    <SliderPrimitive.Thumb className="block w-5 h-5 bg-white border-2 border-[#607AFB] rounded-full focus:outline-none focus-visible:ring focus-visible:ring-[#607AFB] focus-visible:ring-opacity-75" />
+                  </SliderPrimitive.Root>
                 </div>
               </div>
             </section>
