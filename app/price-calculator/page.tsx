@@ -203,12 +203,13 @@ const PriceCalculatorPage = () => {
                   <span>Discount:</span>
                   <span>$20</span>
                 </div>
+                <div className="pt-2 border-t border-gray-200"></div>
                 <div className="flex justify-between font-bold text-[#607AFB]">
                   <span>Total:</span>
                   <span>$180</span>
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-gray-200">
+              <div className="mt-4">
                 <div 
                   className="bg-gray-100 rounded-lg p-4 flex items-center justify-between cursor-pointer"
                   onClick={() => setShowBreakdown(!showBreakdown)}
