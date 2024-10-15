@@ -133,9 +133,13 @@ export default function CartPage() {
                 placeholder="Enter promo code"
                 value={promoCode}
                 onChange={(e) => setPromoCode(e.target.value)}
-                className="flex-grow"
+                className="flex-grow rounded-[50px]"
               />
-              <Button onClick={handleApplyDiscount} className="bg-[#607AFB] text-white hover:bg-[#4c62c9]">
+              <Button 
+                onClick={handleApplyDiscount} 
+                className="text-white hover:bg-[#4c62c9] rounded-[999px]"
+                style={{ backgroundColor: '#607AFB' }}
+              >
                 <Tag className="mr-2 h-4 w-4" /> Apply
               </Button>
             </div>
@@ -184,7 +188,10 @@ export default function CartPage() {
           </CardContent>
         </Card>
 
-        <Button className="w-full !bg-[#607AFB] hover:!bg-[#4c62c9] !text-white py-6 text-lg rounded-[999px]">
+        <Button 
+          className="w-full text-white py-6 text-lg rounded-[999px] hover:bg-[#4c62c9]"
+          style={{ backgroundColor: '#607AFB' }}
+        >
           Proceed to Checkout
         </Button>
 
