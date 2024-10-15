@@ -246,5 +246,5 @@ const PriceCalculatorPage = () => {
     </div>
   );
 }
-
 export default PriceCalculatorPage;
+

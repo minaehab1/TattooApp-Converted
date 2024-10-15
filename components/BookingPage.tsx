@@ -15,35 +15,37 @@ export default function BookingPage() {
   const [date, setDate] = useState<Date | undefined>(new Date())
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <header className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center space-x-4">
-          <h1 className="text-2xl font-bold">Booking</h1>
-        </div>
-        <div className="flex items-center space-x-4">
-          <ThemeToggle />
-          <Avatar>
-            <AvatarImage src="/placeholder.svg?height=40&width=40" alt="Profile" />
-            <AvatarFallback>JD</AvatarFallback>
-          </Avatar>
-        </div>
-      </header>
+    <div className="bg-white min-h-screen p-6 pb-24">
+      <Card className="mb-6">
+        <CardContent className="p-6 pt-8">
+          <div className="flex items-center justify-between mb-4">
+            <h1 className="text-2xl font-semibold">Booking</h1>
+            <div className="flex items-center space-x-4">
+              <ThemeToggle />
+              <Avatar>
+                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="Profile" />
+                <AvatarFallback>JD</AvatarFallback>
+              </Avatar>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex-grow p-4"
+        className="space-y-6"
       >
-        <Card className="w-full max-w-4xl mx-auto">
+        <Card>
           <CardHeader>
-            <CardTitle>Book Your Tattoo Appointment</CardTitle>
+            <CardTitle className="text-xl font-semibold">Book Your Tattoo Appointment</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <section>
               <h2 className="text-lg font-semibold mb-2">Select Artist</h2>
               <Select>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full bg-gray-100 border-0">
                   <SelectValue placeholder="Choose an artist" />
                 </SelectTrigger>
                 <SelectContent>
@@ -67,7 +69,7 @@ export default function BookingPage() {
             <section>
               <h2 className="text-lg font-semibold mb-2">Select Time</h2>
               <Select>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full bg-gray-100 border-0">
                   <SelectValue placeholder="Choose a time slot" />
                 </SelectTrigger>
                 <SelectContent>
@@ -84,9 +86,9 @@ export default function BookingPage() {
             <section>
               <h2 className="text-lg font-semibold mb-2">Tattoo Details</h2>
               <div className="space-y-4">
-                <Input placeholder="Tattoo description" />
+                <Input placeholder="Tattoo description" className="bg-gray-100 border-0" />
                 <Select>
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full bg-gray-100 border-0">
                     <SelectValue placeholder="Tattoo size" />
                   </SelectTrigger>
                   <SelectContent>
@@ -95,17 +97,17 @@ export default function BookingPage() {
                     <SelectItem value="large">Large</SelectItem>
                   </SelectContent>
                 </Select>
-                <Input placeholder="Additional notes" />
+                <Input placeholder="Additional notes" className="bg-gray-100 border-0" />
               </div>
             </section>
 
-            <Button className="w-full bg-primary text-primary-foreground py-6 text-lg">
+            <Button className="w-full bg-[#607AFB] text-white hover:bg-[#4c62c9] py-6 text-lg">
               Book Appointment
             </Button>
           </CardContent>
         </Card>
 
-        <div className="bg-destructive/10 border-l-4 border-destructive text-destructive p-4 rounded-md mt-6">
+        <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md">
           <p className="flex items-center">
             <CalendarDays className="mr-2 h-4 w-4" />
             Please arrive 15 minutes before your scheduled appointment time.
