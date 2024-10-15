@@ -108,8 +108,16 @@ const PriceCalculatorPage = () => {
                     key={level}
                     variant={detailLevel === level ? "default" : "outline"}
                     onClick={() => handleDetailLevelChange(level)}
-                    className={`w-full py-3 ${detailLevel === level ? "bg-[#607AFB] text-white" : "bg-gray-100 text-gray-600"}`}
-                    style={{ borderRadius: '9999px' }}
+                    className={`w-full py-3 ${
+                      detailLevel === level 
+                        ? "!bg-[#607AFB] !text-white hover:!bg-[#4c62c9]" 
+                        : "!bg-gray-100 !text-gray-600 hover:!bg-gray-200"
+                    }`}
+                    style={{ 
+                      borderRadius: '9999px', 
+                      backgroundColor: detailLevel === level ? '#607AFB' : '#f3f4f6',
+                      color: detailLevel === level ? 'white' : '#4b5563'
+                    }}
                   >
                     {level}
                   </Button>
@@ -163,8 +171,8 @@ const PriceCalculatorPage = () => {
                 </div>
                 <Button 
                   onClick={handleApplyDiscount} 
-                  className="bg-[#607AFB] text-white hover:bg-[#4c62c9] px-8 py-3"
-                  style={{ borderRadius: '9999px' }}
+                  className="!bg-[#607AFB] !text-white hover:!bg-[#4c62c9] px-8 py-3"
+                  style={{ borderRadius: '9999px', backgroundColor: '#607AFB', color: 'white' }}
                 >
                   Apply Discount
                 </Button>
