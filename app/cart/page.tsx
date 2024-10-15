@@ -137,8 +137,10 @@ export default function CartPage() {
               />
               <Button 
                 onClick={handleApplyDiscount} 
-                className="text-white hover:bg-[#4c62c9] rounded-[999px]"
+                className="text-white rounded-[999px] transition-colors duration-200"
                 style={{ backgroundColor: '#607AFB' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4A62C8'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#607AFB'}
               >
                 <Tag className="mr-2 h-4 w-4" /> Apply
               </Button>
@@ -189,8 +191,10 @@ export default function CartPage() {
         </Card>
 
         <Button 
-          className="w-full text-white py-6 text-lg rounded-[999px] hover:bg-[#4c62c9]"
+          className="w-full text-white py-6 text-lg rounded-[999px] transition-colors duration-200"
           style={{ backgroundColor: '#607AFB' }}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4A62C8'}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#607AFB'}
         >
           Proceed to Checkout
         </Button>
