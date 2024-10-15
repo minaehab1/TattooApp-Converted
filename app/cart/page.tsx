@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Minus, Plus, Tag, ChevronDown } from 'lucide-react'
+import { Minus, Plus, Tag, ChevronDown, Trash2 } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ThemeToggle } from '@/components/ThemeToggle'
 import BottomNavbar from '@/components/BottomNavbar'
@@ -109,11 +109,12 @@ export default function CartPage() {
                     <Plus className="h-4 w-4" />
                   </Button>
                   <Button
-                    variant="destructive"
-                    size="sm"
+                    variant="ghost"
+                    size="icon"
+                    className="h-8 w-8 text-red-500 hover:text-red-700 hover:bg-red-100"
                     onClick={() => removeItem(item.id)}
                   >
-                    Remove
+                    <Trash2 className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
