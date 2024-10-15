@@ -11,6 +11,23 @@ import { ThemeToggle } from '@/components/ThemeToggle'
 import { Calendar } from "@/components/ui/calendar"
 import { CalendarDays } from 'lucide-react'
 
+// Add this custom CSS class at the top of your file or in a separate CSS file
+const calendarStyles = `
+  .custom-calendar .rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+    background-color: #E5E7EB;
+    color: #4B5563;
+  }
+  .custom-calendar .rdp-day_selected, 
+  .custom-calendar .rdp-day_selected:hover {
+    background-color: #607AFB !important;
+    color: white !important;
+  }
+  .custom-calendar .rdp-day_today {
+    font-weight: bold;
+    color: #607AFB;
+  }
+`;
+
 export default function BookingPage() {
   const [date, setDate] = useState<Date | undefined>(new Date())
 
@@ -19,7 +36,7 @@ export default function BookingPage() {
       <Card className="mb-6">
         <CardContent className="p-6 pt-8">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-semibold">Booking</h1>
+            <h1 className="text-2xl font-semibold" style={{ color: '#1F2937' }}>Booking</h1>
             <div className="flex items-center space-x-4">
               <ThemeToggle />
               <Avatar>
@@ -39,13 +56,13 @@ export default function BookingPage() {
       >
         <Card>
           <CardHeader>
-            <CardTitle className="text-xl font-semibold">Book Your Tattoo Appointment</CardTitle>
+            <CardTitle className="text-xl font-semibold" style={{ color: '#1F2937' }}>Book Your Tattoo Appointment</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <section>
-              <h2 className="text-lg font-semibold mb-2">Select Artist</h2>
+              <h2 className="text-lg font-semibold mb-2" style={{ color: '#1F2937' }}>Select Artist</h2>
               <Select>
-                <SelectTrigger className="w-full bg-gray-100 border-0">
+                <SelectTrigger className="w-full" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }}>
                   <SelectValue placeholder="Choose an artist" />
                 </SelectTrigger>
                 <SelectContent>
@@ -57,19 +74,44 @@ export default function BookingPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold mb-2">Select Date</h2>
-              <Calendar
-                mode="single"
-                selected={date}
-                onSelect={setDate}
-                className="rounded-md border"
-              />
+              <h2 className="text-lg font-semibold mb-2" style={{ color: '#1F2937' }}>Select Date</h2>
+              <div className="custom-calendar">
+                <Calendar
+                  mode="single"
+                  selected={date}
+                  onSelect={setDate}
+                  className="rounded-md border"
+                  styles={{
+                    head_cell: {
+                      width: '100%',
+                      fontWeight: 500,
+                      color: '#4B5563',
+                    },
+                    cell: {
+                      width: '100%',
+                    },
+                    button: {
+                      width: '100%',
+                      color: '#4B5563',
+                    },
+                    nav_button: {
+                      color: '#607AFB',
+                    },
+                    nav_button_previous: {
+                      width: 'auto',
+                    },
+                    nav_button_next: {
+                      width: 'auto',
+                    },
+                  }}
+                />
+              </div>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold mb-2">Select Time</h2>
+              <h2 className="text-lg font-semibold mb-2" style={{ color: '#1F2937' }}>Select Time</h2>
               <Select>
-                <SelectTrigger className="w-full bg-gray-100 border-0">
+                <SelectTrigger className="w-full" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }}>
                   <SelectValue placeholder="Choose a time slot" />
                 </SelectTrigger>
                 <SelectContent>
@@ -84,11 +126,11 @@ export default function BookingPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold mb-2">Tattoo Details</h2>
+              <h2 className="text-lg font-semibold mb-2" style={{ color: '#1F2937' }}>Tattoo Details</h2>
               <div className="space-y-4">
-                <Input placeholder="Tattoo description" className="bg-gray-100 border-0" />
+                <Input placeholder="Tattoo description" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }} />
                 <Select>
-                  <SelectTrigger className="w-full bg-gray-100 border-0">
+                  <SelectTrigger className="w-full" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }}>
                     <SelectValue placeholder="Tattoo size" />
                   </SelectTrigger>
                   <SelectContent>
@@ -97,11 +139,11 @@ export default function BookingPage() {
                     <SelectItem value="large">Large</SelectItem>
                   </SelectContent>
                 </Select>
-                <Input placeholder="Additional notes" className="bg-gray-100 border-0" />
+                <Input placeholder="Additional notes" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }} />
               </div>
             </section>
 
-            <Button className="w-full bg-[#607AFB] text-white hover:bg-[#4c62c9] py-6 text-lg">
+            <Button className="w-full py-6 text-lg" style={{ backgroundColor: '#607AFB', color: 'white' }}>
               Book Appointment
             </Button>
           </CardContent>
