@@ -184,7 +184,7 @@ export default function CartPage() {
           </CardContent>
         </Card>
 
-        <Button className="w-full bg-[#607AFB] text-white hover:bg-[#4c62c9] py-6 text-lg">
+        <Button className="w-full !bg-[#607AFB] hover:!bg-[#4c62c9] !text-white py-6 text-lg">
           Proceed to Checkout
         </Button>
 
