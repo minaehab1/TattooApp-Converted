@@ -26,6 +26,10 @@ const calendarStyles = `
     font-weight: bold;
     color: #607AFB;
   }
+  .custom-calendar .rdp-head_cell {
+    color: #607AFB;
+    font-weight: 600;
+  }
 `;
 
 export default function BookingPage() {
@@ -75,25 +79,29 @@ export default function BookingPage() {
 
             <section>
               <h2 className="text-lg font-semibold mb-2" style={{ color: '#1F2937' }}>Select Date</h2>
+              <style>{calendarStyles}</style>
               <div className="custom-calendar">
                 <Calendar
                   mode="single"
                   selected={date}
                   onSelect={setDate}
                   className="rounded-xl border"
+                  classNames={{
+                    day_selected: "bg-[#607AFB] text-white hover:bg-[#4c62c9]",
+                    day_today: "text-[#607AFB] font-bold",
+                  }}
                   styles={{
                     head_cell: {
                       width: '100%',
-                      fontWeight: 500,
-                      color: '#4B5563',
+                      fontWeight: 600,
+                      color: '#607AFB',
                     },
                     cell: {
                       width: '100%',
                     },
                     button: {
                       width: '100%',
-                      color: '#4B5563',
-                      borderRadius: '0.75rem', // Increased border radius for day buttons
+                      borderRadius: '0.75rem',
                     },
                     nav_button: {
                       color: '#607AFB',
