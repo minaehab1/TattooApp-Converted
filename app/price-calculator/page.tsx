@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Switch } from "@/components/ui/switch"
-import { ChevronDown, Tag } from 'lucide-react'
+import { ChevronDown, Tag, CalendarDays } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ThemeToggle } from '@/components/ThemeToggle'
 import BottomNavbar from '@/components/BottomNavbar'
@@ -41,19 +41,20 @@ const PriceCalculatorPage = () => {
 
   return (
     <div className="bg-white min-h-screen p-6 pb-24">
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h2 className="text-2xl font-semibold">Tattoo Price Calculator</h2>
-          <p className="text-base text-gray-600">Estimate the cost of your tattoo</p>
-        </div>
-        <div className="flex items-center space-x-4">
-          <ThemeToggle />
-          <Avatar>
-            <AvatarImage src="/profile-image.jpg" alt="Profile" />
-            <AvatarFallback>JD</AvatarFallback>
-          </Avatar>
-        </div>
-      </div>
+      <Card className="mb-6">
+        <CardContent className="p-6 pt-8">
+          <div className="flex items-center mb-4">
+            <Avatar className="w-20 h-20 mr-4">
+              <AvatarImage src="/profile-image.jpg" alt="Profile" />
+              <AvatarFallback>JD</AvatarFallback>
+            </Avatar>
+            <div>
+              <h2 className="text-2xl font-semibold">Tattoo Price Calculator</h2>
+              <p className="text-base text-gray-600">Estimate the cost of your tattoo</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -63,19 +64,19 @@ const PriceCalculatorPage = () => {
       >
         <Card>
           <CardHeader>
-            <CardTitle>Calculate Your Tattoo Price</CardTitle>
+            <CardTitle className="text-xl font-semibold">Calculate Your Tattoo Price</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <section>
               <h2 className="text-lg font-semibold mb-2">Style Selection</h2>
               <div className="relative">
                 <button
-                  className="w-full flex items-center justify-between p-3 border rounded-md bg-card"
+                  className="w-full flex items-center justify-between p-3 border rounded-full bg-gray-100 text-gray-600"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
                   <div className="flex flex-wrap gap-1">
                     {selectedItems.map(item => (
-                      <span key={item} className="bg-primary/10 text-primary px-2 py-1 rounded-full text-sm">
+                      <span key={item} className="bg-[#607AFB]/10 text-[#607AFB] px-2 py-1 rounded-full text-sm">
                         {item} ×
                       </span>
                     ))}
@@ -83,9 +84,9 @@ const PriceCalculatorPage = () => {
                   <ChevronDown className="h-5 w-5" />
                 </button>
                 {isDropdownOpen && (
-                  <div className="absolute z-10 w-full mt-1 bg-card border rounded-md shadow-lg">
+                  <div className="absolute z-10 w-full mt-1 bg-white border rounded-md shadow-lg">
                     {['Item 01', 'Item 02', 'Item 03', 'Item 04'].map(item => (
-                      <label key={item} className="flex items-center p-3 hover:bg-accent">
+                      <label key={item} className="flex items-center p-3 hover:bg-gray-100">
                         <Checkbox
                           checked={selectedItems.includes(item)}
                           onCheckedChange={() => handleItemToggle(item)}
@@ -101,12 +102,14 @@ const PriceCalculatorPage = () => {
 
             <section>
               <h2 className="text-lg font-semibold mb-2">Details Level</h2>
-              <div className="flex space-x-2">
+              <div className="grid grid-cols-3 gap-2">
                 {['Low', 'Medium', 'High'].map(level => (
                   <Button
                     key={level}
                     variant={detailLevel === level ? "default" : "outline"}
                     onClick={() => handleDetailLevelChange(level)}
+                    className={`w-full py-3 ${detailLevel === level ? "bg-[#607AFB] text-white" : "bg-gray-100 text-gray-600"}`}
+                    style={{ borderRadius: '9999px' }}
                   >
                     {level}
                   </Button>
@@ -118,7 +121,7 @@ const PriceCalculatorPage = () => {
               <h2 className="text-lg font-semibold mb-2">Size Specification</h2>
               <div className="space-y-4">
                 <div>
-                  <Label htmlFor="height">Height (cm): {height[0]} cm</Label>
+                  <Label htmlFor="height" className="text-gray-600">Height (cm): {height[0]} cm</Label>
                   <Slider
                     id="height"
                     min={1}
@@ -130,7 +133,7 @@ const PriceCalculatorPage = () => {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="width">Width (cm): {width[0]} cm</Label>
+                  <Label htmlFor="width" className="text-gray-600">Width (cm): {width[0]} cm</Label>
                   <Slider
                     id="width"
                     min={1}
@@ -148,16 +151,23 @@ const PriceCalculatorPage = () => {
               <h2 className="text-lg font-semibold mb-2">Apply Discounts</h2>
               <div className="flex space-x-2">
                 <div className="relative flex-grow">
-                  <Tag className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
+                  <Tag className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                   <Input
                     type="text"
                     placeholder="Enter discount code"
                     value={discountCode}
                     onChange={(e) => setDiscountCode(e.target.value)}
-                    className="pl-10"
+                    className="pl-10 bg-gray-100 border-0 py-3"
+                    style={{ borderRadius: '9999px' }}
                   />
                 </div>
-                <Button onClick={handleApplyDiscount} className="bg-[#607AFB] text-white hover:bg-[#4c62c9]">Apply Discount</Button>
+                <Button 
+                  onClick={handleApplyDiscount} 
+                  className="bg-[#607AFB] text-white hover:bg-[#4c62c9] px-8 py-3"
+                  style={{ borderRadius: '9999px' }}
+                >
+                  Apply Discount
+                </Button>
               </div>
             </section>
 
@@ -165,7 +175,7 @@ const PriceCalculatorPage = () => {
               <div className="flex items-center justify-between mb-2">
                 <h2 className="text-lg font-semibold">Estimate Summary</h2>
                 <div className="flex items-center space-x-2">
-                  <span className="text-sm">Breakdown</span>
+                  <span className="text-sm text-gray-600">Breakdown</span>
                   <Switch
                     checked={showBreakdown}
                     onCheckedChange={setShowBreakdown}
@@ -174,20 +184,20 @@ const PriceCalculatorPage = () => {
               </div>
               <Card>
                 <CardContent className="p-4">
-                  <div className="flex justify-between mb-2">
+                  <div className="flex justify-between mb-2 text-gray-600">
                     <span>Subtotal:</span>
                     <span>$200</span>
                   </div>
-                  <div className="flex justify-between mb-2">
+                  <div className="flex justify-between mb-2 text-gray-600">
                     <span>Discount:</span>
                     <span>$20</span>
                   </div>
-                  <div className="flex justify-between font-bold">
+                  <div className="flex justify-between font-bold text-[#607AFB]">
                     <span>Total:</span>
                     <span>$180</span>
                   </div>
                   {showBreakdown && (
-                    <div className="mt-4 pt-4 border-t text-sm text-muted-foreground">
+                    <div className="mt-4 pt-4 border-t text-sm text-gray-600">
                       <div>Total Hours: 5</div>
                       <div>Rate per Hour: $100</div>
                     </div>
