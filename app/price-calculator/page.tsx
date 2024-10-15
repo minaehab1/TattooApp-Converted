@@ -44,14 +44,14 @@ const PriceCalculatorPage = () => {
     <div className="bg-white min-h-screen p-6 pb-24">
       <Card className="mb-6">
         <CardContent className="p-6 pt-8">
-          <div className="flex items-center mb-4">
-            <Avatar className="w-20 h-20 mr-4">
-              <AvatarImage src="/profile-image.jpg" alt="Profile" />
-              <AvatarFallback>JD</AvatarFallback>
-            </Avatar>
-            <div>
-              <h2 className="text-2xl font-semibold">Tattoo Price Calculator</h2>
-              <p className="text-base text-gray-600">Estimate the cost of your tattoo</p>
+          <div className="flex items-center justify-between mb-4">
+            <h1 className="text-2xl font-semibold">Tattoo Price Calculator</h1>
+            <div className="flex items-center space-x-4">
+              <ThemeToggle />
+              <Avatar>
+                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="Profile" />
+                <AvatarFallback>JD</AvatarFallback>
+              </Avatar>
             </div>
           </div>
         </CardContent>
