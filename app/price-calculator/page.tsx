@@ -93,7 +93,9 @@ const PriceCalculatorPage = () => {
                           onCheckedChange={() => handleItemToggle(item)}
                           className="mr-2 border-[#607AFB] data-[state=checked]:bg-[#607AFB] data-[state=checked]:text-white"
                         />
-                        <span className="text-gray-700">{item}</span>
+                        <span className={`${selectedItems.includes(item) ? 'text-[#607AFB]' : 'text-gray-700'}`}>
+                          {item}
+                        </span>
                       </label>
                     ))}
                   </div>
