@@ -191,16 +191,7 @@ const PriceCalculatorPage = () => {
             </section>
 
             <section>
-              <div className="flex items-center justify-between mb-2">
-                <h2 className="text-lg font-semibold">Estimate Summary</h2>
-                <div className="flex items-center space-x-2">
-                  <span className="text-sm text-gray-600">Breakdown</span>
-                  <Switch
-                    checked={showBreakdown}
-                    onCheckedChange={setShowBreakdown}
-                  />
-                </div>
-              </div>
+              <h2 className="text-lg font-semibold mb-2">Estimate Summary</h2>
               <Card>
                 <CardContent className="p-4">
                   <div className="flex justify-between mb-2 text-gray-600">
@@ -215,12 +206,21 @@ const PriceCalculatorPage = () => {
                     <span>Total:</span>
                     <span>$180</span>
                   </div>
-                  {showBreakdown && (
-                    <div className="mt-4 pt-4 border-t text-sm text-gray-600">
-                      <div>Total Hours: 5</div>
-                      <div>Rate per Hour: $100</div>
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <div 
+                      className="bg-gray-100 rounded-lg p-4 flex items-center justify-between cursor-pointer"
+                      onClick={() => setShowBreakdown(!showBreakdown)}
+                    >
+                      <span className="text-sm font-medium text-gray-700">Show Price Breakdown</span>
+                      <ChevronDown className={`h-5 w-5 text-gray-500 transform transition-transform ${showBreakdown ? 'rotate-180' : ''}`} />
                     </div>
-                  )}
+                    {showBreakdown && (
+                      <div className="mt-4 text-sm text-gray-600">
+                        <div>Total Hours: 5</div>
+                        <div>Rate per Hour: $100</div>
+                      </div>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             </section>
