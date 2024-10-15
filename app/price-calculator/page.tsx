@@ -72,7 +72,7 @@ const PriceCalculatorPage = () => {
               <h2 className="text-lg font-semibold mb-2">Style Selection</h2>
               <div className="relative">
                 <button
-                  className="w-full flex items-center justify-between p-3 border rounded-full bg-gray-100 text-gray-600"
+                  className="w-full flex items-center justify-between p-3 border rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
                   <div className="flex flex-wrap gap-1">
@@ -82,18 +82,18 @@ const PriceCalculatorPage = () => {
                       </span>
                     ))}
                   </div>
-                  <ChevronDown className="h-5 w-5" />
+                  <ChevronDown className="h-5 w-5 text-[#607AFB]" />
                 </button>
                 {isDropdownOpen && (
-                  <div className="absolute z-10 w-full mt-1 bg-white border rounded-md shadow-lg">
+                  <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-md shadow-lg">
                     {['Item 01', 'Item 02', 'Item 03', 'Item 04'].map(item => (
-                      <label key={item} className="flex items-center p-3 hover:bg-gray-100">
+                      <label key={item} className="flex items-center p-3 hover:bg-[#607AFB]/10 cursor-pointer">
                         <Checkbox
                           checked={selectedItems.includes(item)}
                           onCheckedChange={() => handleItemToggle(item)}
-                          className="mr-2"
+                          className="mr-2 border-[#607AFB] data-[state=checked]:bg-[#607AFB] data-[state=checked]:text-white"
                         />
-                        {item}
+                        <span className="text-gray-700">{item}</span>
                       </label>
                     ))}
                   </div>
