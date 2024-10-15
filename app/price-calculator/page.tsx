@@ -192,37 +192,41 @@ const PriceCalculatorPage = () => {
 
             <section>
               <h2 className="text-lg font-semibold mb-2">Estimate Summary</h2>
-              <Card>
-                <CardContent className="p-4">
-                  <div className="flex justify-between mb-2 text-gray-600">
-                    <span>Subtotal:</span>
-                    <span>$200</span>
-                  </div>
-                  <div className="flex justify-between mb-2 text-gray-600">
-                    <span>Discount:</span>
-                    <span>$20</span>
-                  </div>
-                  <div className="flex justify-between font-bold text-[#607AFB]">
-                    <span>Total:</span>
-                    <span>$180</span>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-gray-200">
-                    <div 
-                      className="bg-gray-100 rounded-lg p-4 flex items-center justify-between cursor-pointer"
-                      onClick={() => setShowBreakdown(!showBreakdown)}
-                    >
-                      <span className="text-sm font-medium text-gray-700">Show Price Breakdown</span>
-                      <ChevronDown className={`h-5 w-5 text-gray-500 transform transition-transform ${showBreakdown ? 'rotate-180' : ''}`} />
+              <div className="space-y-2">
+                <div className="flex justify-between text-gray-600">
+                  <span>Subtotal:</span>
+                  <span>$200</span>
+                </div>
+                <div className="flex justify-between text-gray-600">
+                  <span>Discount:</span>
+                  <span>$20</span>
+                </div>
+                <div className="flex justify-between font-bold text-[#607AFB]">
+                  <span>Total:</span>
+                  <span>$180</span>
+                </div>
+              </div>
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <div 
+                  className="bg-gray-100 rounded-lg p-4 flex items-center justify-between cursor-pointer"
+                  onClick={() => setShowBreakdown(!showBreakdown)}
+                >
+                  <span className="text-sm font-medium text-gray-700">Show Price Breakdown</span>
+                  <ChevronDown className={`h-5 w-5 text-gray-500 transform transition-transform ${showBreakdown ? 'rotate-180' : ''}`} />
+                </div>
+                {showBreakdown && (
+                  <div className="mt-4 space-y-2 text-sm text-gray-600">
+                    <div className="flex justify-between">
+                      <span>Total Hours:</span>
+                      <span>5</span>
                     </div>
-                    {showBreakdown && (
-                      <div className="mt-4 text-sm text-gray-600">
-                        <div>Total Hours: 5</div>
-                        <div>Rate per Hour: $100</div>
-                      </div>
-                    )}
+                    <div className="flex justify-between">
+                      <span>Rate per Hour:</span>
+                      <span>$100</span>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+                )}
+              </div>
             </section>
 
             <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md">
