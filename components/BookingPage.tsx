@@ -33,7 +33,7 @@ export default function BookingPage() {
 
   return (
     <div className="bg-white min-h-screen p-6 pb-24">
-      <Card className="mb-6">
+      <Card className="mb-6 rounded-2xl">
         <CardContent className="p-6 pt-8">
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-2xl font-semibold" style={{ color: '#1F2937' }}>Booking</h1>
@@ -54,7 +54,7 @@ export default function BookingPage() {
         transition={{ duration: 0.5 }}
         className="space-y-6"
       >
-        <Card>
+        <Card className="rounded-2xl">
           <CardHeader>
             <CardTitle className="text-xl font-semibold" style={{ color: '#1F2937' }}>Book Your Tattoo Appointment</CardTitle>
           </CardHeader>
@@ -62,7 +62,7 @@ export default function BookingPage() {
             <section>
               <h2 className="text-lg font-semibold mb-2" style={{ color: '#1F2937' }}>Select Artist</h2>
               <Select>
-                <SelectTrigger className="w-full" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }}>
+                <SelectTrigger className="w-full rounded-xl" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }}>
                   <SelectValue placeholder="Choose an artist" />
                 </SelectTrigger>
                 <SelectContent>
@@ -80,7 +80,7 @@ export default function BookingPage() {
                   mode="single"
                   selected={date}
                   onSelect={setDate}
-                  className="rounded-md border"
+                  className="rounded-xl border"
                   styles={{
                     head_cell: {
                       width: '100%',
@@ -93,6 +93,7 @@ export default function BookingPage() {
                     button: {
                       width: '100%',
                       color: '#4B5563',
+                      borderRadius: '0.75rem', // Increased border radius for day buttons
                     },
                     nav_button: {
                       color: '#607AFB',
@@ -111,7 +112,7 @@ export default function BookingPage() {
             <section>
               <h2 className="text-lg font-semibold mb-2" style={{ color: '#1F2937' }}>Select Time</h2>
               <Select>
-                <SelectTrigger className="w-full" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }}>
+                <SelectTrigger className="w-full rounded-xl" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }}>
                   <SelectValue placeholder="Choose a time slot" />
                 </SelectTrigger>
                 <SelectContent>
@@ -128,9 +129,9 @@ export default function BookingPage() {
             <section>
               <h2 className="text-lg font-semibold mb-2" style={{ color: '#1F2937' }}>Tattoo Details</h2>
               <div className="space-y-4">
-                <Input placeholder="Tattoo description" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }} />
+                <Input placeholder="Tattoo description" className="rounded-xl" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }} />
                 <Select>
-                  <SelectTrigger className="w-full" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }}>
+                  <SelectTrigger className="w-full rounded-xl" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }}>
                     <SelectValue placeholder="Tattoo size" />
                   </SelectTrigger>
                   <SelectContent>
@@ -139,17 +140,24 @@ export default function BookingPage() {
                     <SelectItem value="large">Large</SelectItem>
                   </SelectContent>
                 </Select>
-                <Input placeholder="Additional notes" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }} />
+                <Input placeholder="Additional notes" className="rounded-xl" style={{ backgroundColor: '#F3F4F6', border: 'none', color: '#4B5563' }} />
               </div>
             </section>
 
-            <Button className="w-full py-6 text-lg" style={{ backgroundColor: '#607AFB', color: 'white' }}>
+            <Button 
+              className="w-full py-6 text-lg rounded-full" 
+              style={{ 
+                backgroundColor: '#607AFB', 
+                color: 'white',
+                borderRadius: '9999px', // This ensures fully rounded corners
+              }}
+            >
               Book Appointment
             </Button>
           </CardContent>
         </Card>
 
-        <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md">
+        <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-xl">
           <p className="flex items-center">
             <CalendarDays className="mr-2 h-4 w-4" />
             Please arrive 15 minutes before your scheduled appointment time.
