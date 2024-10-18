@@ -18,24 +18,22 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
       "@/*": [
         "./*"
       ]
     },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "types": ["node", "d3-color", "d3-ease", "d3-interpolate"]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx",
     ".next/types/**/*.ts"
   ],
   "exclude": [

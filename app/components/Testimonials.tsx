@@ -42,7 +42,7 @@ const Testimonials = () => {
                   <p className="text-gray-600">{testimonial.role}</p>
                 </div>
               </div>
-              <p className="italic">"{testimonial.quote}"</p>
+              <p className="text-gray-600">&ldquo;{testimonial.quote}&rdquo;</p>
             </div>
           ))}
         </div>

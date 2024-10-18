@@ -1,13 +1,11 @@
 # NextJS Tattoo Studio App
 
-Welcome to the NextJS Tattoo Studio App, bootstrapped using `create-next-app`. This template supports TypeScript and uses the App Router for improved routing and layouts.
-
+This is a Next.js application for a tattoo studio, featuring a dashboard, booking system, and other related functionalities.
 
 ## Getting Started
 
-Hit the run button to start the development server.
+First, install the dependencies:
 
-You can start editing the home page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## API Routes
 
@@ -96,5 +94,7 @@ my-app/
 │ └── checkout/ # Checkout components
 └── lib/ # Utility functions and helpers
       └── navigation.ts # Navigation logic
+
+
 
 
