@@ -1,0 +1,5 @@
+{
+  "include": ["pages", "components", "lib", "src"],
+  "exclude": ["node_modules"],
+  "entrypoints": ["pages"]
+}
